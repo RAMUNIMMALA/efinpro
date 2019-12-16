@@ -8,7 +8,16 @@ namespace efinpro.Controllers
 {
     public class HomeController : EFinProBaseController
     {
-        // GET: Home
-        
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult SignIn()
+        {
+            return View();
+        }
     }
+
+
 }
