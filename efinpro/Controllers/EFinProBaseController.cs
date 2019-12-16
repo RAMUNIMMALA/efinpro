@@ -8,10 +8,7 @@ namespace efinpro.Controllers
 {
     public class EFinProBaseController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
 
     }
 }
