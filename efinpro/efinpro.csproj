@@ -158,10 +158,53 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\base-admin-responsive.css" />
+    <Content Include="css\bootstrap-responsive.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome-ie7.css" />
+    <Content Include="css\font-awesome-ie7.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\pages\dashboard.css" />
+    <Content Include="css\pages\faq.css" />
+    <Content Include="css\pages\plans.css" />
+    <Content Include="css\pages\reports.css" />
+    <Content Include="css\pages\signin.css" />
+    <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\body-bg.png" />
+    <Content Include="img\glyphicons-halflings-white.html" />
+    <Content Include="img\glyphicons-halflings.html" />
+    <Content Include="img\icons-sa7c41345d9.png" />
+    <Content Include="img\message_avatar1.png" />
+    <Content Include="img\message_avatar2.png" />
+    <Content Include="img\signin\check.png" />
+    <Content Include="img\signin\fb_btn.png" />
+    <Content Include="img\signin\password.png" />
+    <Content Include="img\signin\twitter_btn.png" />
+    <Content Include="img\signin\user.png" />
+    <Content Include="js\base.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\chart.min.js" />
+    <Content Include="js\charts\area.js" />
+    <Content Include="js\charts\bar.js" />
+    <Content Include="js\charts\donut.js" />
+    <Content Include="js\charts\line.js" />
+    <Content Include="js\charts\pie.js" />
+    <Content Include="js\excanvas.min.js" />
+    <Content Include="js\faq.js" />
+    <Content Include="js\full-calendar\fullcalendar.css" />
+    <Content Include="js\full-calendar\fullcalendar.min.js" />
+    <Content Include="js\guidely\guidely-number.png" />
+    <Content Include="js\guidely\guidely.css" />
+    <Content Include="js\guidely\guidely.min.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\signin.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -169,6 +212,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.svgz" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\fontawesome-webfontd41d.eot" />
+    <Content Include="font\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -190,12 +239,12 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Home\SignIn.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

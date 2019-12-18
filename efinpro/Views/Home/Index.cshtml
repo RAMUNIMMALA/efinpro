@@ -1,97 +1,122 @@
-﻿@{
-    ViewBag.Title = "Login Register | Notika - Notika Admin Template";
-}
+﻿
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Login Register area Start-->
-<div class="login-content">
-    <!-- Login -->
-    <div class="nk-block toggled" id="l-login">
-        <div class="nk-form">
-            <div class="input-group">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
-                <div class="nk-int-st">
-                    <label>User Login</label>
-                </div>
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
-                <div class="nk-int-st">
-                    <input type="text" class="form-control" placeholder="Username">
-                </div>
-            </div>
-            <div class="input-group mg-t-15">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
-                <div class="nk-int-st">
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-            </div>
-            <div class="fm-checkbox">
-                <label><input type="checkbox" class="i-checks"> <i></i> Keep me signed in</label>
-            </div>
-            <a href="#l-register" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></a>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <title>Login - Bootstrap Admin Template</title>
 
-        <div class="nk-navigation nk-lg-ic">
-            <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Sign In</span></a>
-            <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
-            <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
-        </div>
-    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Register -->
-    <div class="nk-block" id="l-register">
-        <div class="nk-form">
-            <div class="input-group">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
-                <div class="nk-int-st">
-                    <input type="text" class="form-control" placeholder="Username">
-                </div>
-            </div>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
-            <div class="input-group mg-t-15">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
-                <div class="nk-int-st">
-                    <input type="text" class="form-control" placeholder="Email Address">
-                </div>
-            </div>
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 
-            <div class="input-group mg-t-15">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
-                <div class="nk-int-st">
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-            </div>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/css/pages/signin.css" rel="stylesheet" type="text/css">
 
-            <a href="#l-login" data-ma-action="nk-login-switch" data-ma-block="#l-login" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow"></i></a>
-        </div>
+</head>
 
-        <div class="nk-navigation rg-ic-stl">
-            <a href="#" data-ma-action="nk-login-switchh" data-ma-block="#l-loginn"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-            <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-            <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
-        </div>
-    </div>
+<body>
 
-    <!-- Forgot Password -->
-    <div class="nk-block" id="l-forget-password">
-        <div class="nk-form">
-            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+    <div class="navbar navbar-fixed-top">
 
-            <div class="input-group">
-                <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
-                <div class="nk-int-st">
-                    <input type="text" class="form-control" placeholder="Email Address">
-                </div>
-            </div>
+        <div class="navbar-inner">
 
-            <a href="#l-login" data-ma-action="nk-login-switch" data-ma-block="#l-login" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow"></i></a>
-        </div>
+            <div class="container">
 
-        <div class="nk-navigation nk-lg-ic rg-ic-stl">
-            <a href="SignIn/" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-            <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-            <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
-        </div>
-    </div>
-</div>
-<!-- Login Register area End-->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a class="brand" href="index.html">
+                    EFin Pro
+                </a>
+
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+
+                        <li class="">
+                            
+
+                        </li>
+
+                        <li class="">
+                            
+
+                        </li>
+                    </ul>
+
+                </div><!--/.nav-collapse -->
+
+            </div> <!-- /container -->
+
+        </div> <!-- /navbar-inner -->
+
+    </div> <!-- /navbar -->
+
+
+
+    <div class="account-container">
+
+        <div class="content clearfix">
+
+            <form action="#" method="post">
+
+                <h1>Member Login</h1>
+
+                <div class="login-fields">
+
+                    <p>Please provide your details</p>
+
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+                    </div> <!-- /field -->
+
+                    <div class="field">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" />
+                    </div> <!-- /password -->
+
+                </div> <!-- /login-fields -->
+
+                <div class="login-actions">
+
+                    <span class="login-checkbox">
+                        <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+                        <label class="choice" for="Field">Keep me signed in</label>
+                    </span>
+
+                    <a class="button btn btn-success btn-large" href="Dashboard/">Sign In</a>
+
+                </div> <!-- .actions -->
+
+
+
+            </form>
+
+        </div> <!-- /content -->
+
+    </div> <!-- /account-container -->
+
+
+
+    <div class="login-extra">
+        <a href="#">Reset Password</a>
+    </div> <!-- /login-extra -->
+
+
+    <script src="~/js/jquery-1.7.2.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+
+    <script src="~/js/signin.js"></script>
+
+</body>
+
+</html>
