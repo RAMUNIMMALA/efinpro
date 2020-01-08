@@ -12,8 +12,9 @@ using System.IO;
 using System.Configuration;
 namespace DataAccess
 {
-    class Utility
+   public abstract class Utility
     {
+        protected DataSet dsResultSet = null;
         #region DataUtility
         /// <summary>
         /// Description : To perform database operations
@@ -35,8 +36,9 @@ namespace DataAccess
 
             internal static DataSet RunSP(string SPName, IDbDataParameter[] ParamsList)
             {
-                string ConStr = ConfigurationManager.ConnectionStrings["eerasqlconnection"].ConnectionString;
+                string ConStr = ConfigurationManager.ConnectionStrings["sqlconnection"].ConnectionString;
                 SqlConnection _Connection = new SqlConnection(ConStr);
+
                 SqlCommand _command = new SqlCommand(SPName, _Connection);
                 _command.CommandType = CommandType.StoredProcedure;
                 if (ParamsList != null)
@@ -47,12 +49,10 @@ namespace DataAccess
                     }
                 }
                 DataSet _dsResultSet = new DataSet();
-
                 try
                 {
                     SqlDataAdapter _da = new SqlDataAdapter(_command);
                     _da.Fill(_dsResultSet);
-
                 }
                 catch (Exception ex)
                 {
@@ -60,10 +60,8 @@ namespace DataAccess
                 }
                 return _dsResultSet;
             }
-
         }
         #endregion
-
         #region Validate Dataset
         /// <summary>
         /// Validate a dataset and its table rows count
@@ -206,7 +204,6 @@ namespace DataAccess
                 }
                 return lstT;
             }
-
         }
         #endregion
     }
