@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
+
 
 namespace Models
 {
     public class Users
     {
-        public int Userid  { get; set; }
-        public string FullName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ContactNumber { get; set; }
-        public string MailID { get; set; }
-        public int Role { get; set; }
-        public bool Status { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public int Userid { set; get; }
+        public string FirstName { set; get; }
+        public string LastName { set; get; }
+        public string MailId { set; get; }
+        public string ContactNumber { set; get; }
+        public int Role { set; get; }
+        public int Status { set; get; }
+        public string Password { set; get; } 
     }
 }
+

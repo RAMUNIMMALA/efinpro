@@ -8,6 +8,6 @@ namespace efinpro.Controllers
 {
     public class EFinProBaseController : Controller
     {
-       public const string ErrorMessage = "Unable to process, contact IT department";
+       public const string ErrorMessage = "something went wrong please contact IT Department";
     }
 }

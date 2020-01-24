@@ -1,63 +1,45 @@
-﻿
+﻿@model Models.Users
 @{
     ViewBag.Title = "NewUser";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+
 <div class="tab-content">
-    <div class="tab-pane active" id="formcontrols">
-        <form class="form-horizontal" id="edit-profile">
-            <fieldset>
-
+    <div id="formcontrols" class="tab-pane active">
+        <div class="form-horizontal" id="edit-profile">
+            @using (Html.BeginForm("NewUser", "User", FormMethod.Post))
+            {
                 <div class="control-group">
-                    <label class="control-label" for="username">Username</label>
+                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-sm-2"})
                     <div class="controls">
-                        <input  class="span6 disabled" id="username" type="text" >
-                        @*<p class="help-block">Your username is for logging in and cannot be changed.</p>*@
-                    </div> <!-- /controls -->
-                </div> <!-- /control-group -->
-
-
-                <div class="control-group">
-                    <label class="control-label" for="firstname">First Name</label>
-                    <div class="controls">
-                        <input class="span6" id="firstname" type="text">
-                    </div> <!-- /controls -->
-                </div> <!-- /control-group -->
-
-
-                <div class="control-group">
-                    <label class="control-label" for="lastname">Last Name</label>
-                    <div class="controls">
-                        <input class="span6" id="lastname" type="text" >
-                    </div> <!-- /controls -->
-                </div> <!-- /control-group -->
-
-
-                <div class="control-group">
-                    <label class="control-label" for="email">Email Address</label>
-                    <div class="controls">
-                        <input class="span4" id="email" type="text" >
-                    </div> <!-- /controls -->
-                </div> <!-- /control-group -->
-
-
-                
-
-                <div class="control-group">
-                    <label class="control-label" for="password1">Phone NUmber</label>
-                    <div class="controls">
-                        <input class="span4" id="password1" type="text" >
-                    </div> <!-- /controls -->
-                </div> <!-- /control-group -->
-
-
-               
-                <div class="form-actions">
-                    <button class="btn btn-primary" type="submit">Save</button>
-                    <button class="btn">Cancel</button>
-                </div> <!-- /form-actions -->
-            </fieldset>
-        </form>
+                        @Html.TextBoxFor(model => model.FirstName, new {@id="txtfirstname", @class = "required form-control alphabet", @type = "text", @required = ""})
+                    </div>
+                </div>
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.LastName, new { @class = "control-label col-sm-2" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.LastName, new { @class = "required form-control alphabet", @type = "text", @required = "", @requiredpattern = "text" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.MailId, new { @class = "control-label col-sm-2"  })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.MailId, new { @class = "form-control", @type = "email", @required = "" })
+                    </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-sm-2"})
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "required form-control numeric contactno", @required = "" })
+                        </div>
+                    </div>
+                   
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit" value="NewUser">Create User</button>
+                        <span id="message"></span>
+                    </div>
+            }    
+        </div>
     </div>
 </div>

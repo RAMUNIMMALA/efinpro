@@ -10,11 +10,12 @@ using System.Collections;
 using System.Reflection;
 using System.IO;
 using System.Configuration;
+
 namespace DataAccess
 {
    public abstract class Utility
     {
-        protected DataSet dsResultSet = null;
+        public DataSet dsresultset = new DataSet();
         #region DataUtility
         /// <summary>
         /// Description : To perform database operations
@@ -33,7 +34,6 @@ namespace DataAccess
 
                 return _obj;
             }
-
             internal static DataSet RunSP(string SPName, IDbDataParameter[] ParamsList)
             {
                 string ConStr = ConfigurationManager.ConnectionStrings["sqlconnection"].ConnectionString;
@@ -71,7 +71,7 @@ namespace DataAccess
         protected bool ValidateResultSet(DataSet _dsResult)
         {
             bool _blFalg = false;
-            if (_dsResult != null && _dsResult.Tables[0].Rows.Count > 0)
+            if (_dsResult != null && _dsResult.Tables.Count > 0)
             {
                 _blFalg = true;
             }
