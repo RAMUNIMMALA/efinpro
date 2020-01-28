@@ -13,9 +13,9 @@ using System.Configuration;
 
 namespace DataAccess
 {
-   public abstract class Utility
+    public abstract class Utility
     {
-        public DataSet dsresultset = new DataSet();
+        protected DataSet dsresultset = null;
         #region DataUtility
         /// <summary>
         /// Description : To perform database operations
@@ -71,7 +71,7 @@ namespace DataAccess
         protected bool ValidateResultSet(DataSet _dsResult)
         {
             bool _blFalg = false;
-            if (_dsResult != null && _dsResult.Tables.Count > 0)
+            if (_dsResult != null && _dsResult.Tables[0].Rows.Count > 0)
             {
                 _blFalg = true;
             }

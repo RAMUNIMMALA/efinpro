@@ -1,45 +1,42 @@
-﻿@model Models.Users
+﻿@model Models.User
 @{
     ViewBag.Title = "NewUser";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
-
 <div class="tab-content">
     <div id="formcontrols" class="tab-pane active">
         <div class="form-horizontal" id="edit-profile">
             @using (Html.BeginForm("NewUser", "User", FormMethod.Post))
             {
                 <div class="control-group">
-                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-sm-2"})
+                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-sm-2" })
                     <div class="controls">
-                        @Html.TextBoxFor(model => model.FirstName, new {@id="txtfirstname", @class = "required form-control alphabet", @type = "text", @required = ""})
+                        @Html.TextBoxFor(model => model.FirstName, new { @id = "txtfirstname", @class = "required form-control alphabet", @type = "text", @required = "" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.LastName, new { @class = "control-label col-sm-2" })
+                    <div class="controls">
+                        @Html.TextBoxFor(model => model.LastName, new { @id = "txtLastName", @class = "required form-control alphabet", @type = "text", @required = "", @requiredpattern = "text" })
                     </div>
                 </div>
                     <div class="control-group">
-                        @Html.LabelFor(model => model.LastName, new { @class = "control-label col-sm-2" })
+                        @Html.LabelFor(model => model.MailId, new { @class = "control-label col-sm-2" })
                         <div class="controls">
-                            @Html.TextBoxFor(model => model.LastName, new { @class = "required form-control alphabet", @type = "text", @required = "", @requiredpattern = "text" })
+                            @Html.TextBoxFor(model => model.MailId, new { @id = "txtmail", @class = "form-control", @type = "email", @required = "" })
                         </div>
                     </div>
                     <div class="control-group">
-                        @Html.LabelFor(model => model.MailId, new { @class = "control-label col-sm-2"  })
+                        @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-sm-2" })
                         <div class="controls">
-                            @Html.TextBoxFor(model => model.MailId, new { @class = "form-control", @type = "email", @required = "" })
-                    </div>
-                    </div>
-                    <div class="control-group">
-                        @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-sm-2"})
-                        <div class="controls">
-                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "required form-control numeric contactno", @required = "" })
+                            @Html.TextBoxFor(model => model.ContactNumber, new { @id = "txtcontactnumber", @class = "required form-control numeric contactno", @required = "" })
                         </div>
                     </div>
-                   
                     <div class="form-actions">
                         <button class="btn btn-primary" type="submit" value="NewUser">Create User</button>
                         <span id="message"></span>
                     </div>
-            }    
+            }
         </div>
     </div>
 </div>
