@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using DataAccess;
+using System.Collections;
 
 namespace efinpro.Controllers
 {
@@ -14,6 +15,8 @@ namespace efinpro.Controllers
         Users _users = null;
         String UserMailID = null;
         string Password = null;
+        string returnAction = null;
+        string returnController = null;
         [HttpGet]
         public ActionResult Index()
         {
@@ -35,14 +38,33 @@ namespace efinpro.Controllers
             {
                 UserMailID = _userdetails.MailID;
                 Password = _userdetails.Password;
-                _users = _daUsers.VerifyUserLogin(UserMailID, Password);
-                Session["userdata"] = _users;
+                _users = _daUsers.VerifyUserLogin(UserMailID, Password);                
+                if(_users!=null)
+                {
+                    if(_users.Status)
+                    {
+                        Session["userdata"] = _users;
+                        returnAction="Dashboard";
+                        returnController = "Home";
+
+                    }
+                    else
+                    {
+                        ViewBag.Login = "Invalid Credentials";
+                        returnAction = "Index";
+                        returnController = "Home";
+                    }
+                }
+                else
+                {
+                    ViewBag.Login = "Invalid Credentials";
+                }
             }
             catch (Exception ex)
             {
                 ViewBag.alertMessage = ErrorMessage;
             }
-            return View("Dashboard");
+            return RedirectToAction(returnAction, returnController);
         }
     }
 }
