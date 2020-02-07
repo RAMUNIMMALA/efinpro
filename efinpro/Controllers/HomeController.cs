@@ -1,52 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using DataAccess;
 using Models;
-using DataAccess;
-using System.Collections;
+using System;
+using System.Web.Mvc;
 
 namespace efinpro.Controllers
 {
     public class HomeController : EFinProBaseController
     {
-        DA_Users _daUsers = null;
-        Users _users = null;
-        String UserMailID = null;
-        string Password = null;
-        string returnAction = null;
-        string returnController = null;
+        private DA_Users _daUsers = null;
+        private Users _users = null;
+
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
+
         public ActionResult SignIn()
         {
             return View();
         }
+
         public ActionResult Dashboard()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Index(Users _userdetails)
         {
+            string returnAction = null;
+            string returnController = null;
             _daUsers = new DA_Users();
             try
-            {
-                UserMailID = _userdetails.MailID;
-                Password = _userdetails.Password;
-                _users = _daUsers.VerifyUserLogin(UserMailID, Password);                
-                if(_users!=null)
+            {                
+                _users = _daUsers.VerifyUserLogin(_userdetails.MailID, _userdetails.Password);                
+                if(_users!=null && ModelState.Count>0)
                 {
                     if(_users.Status)
                     {
                         Session["userdata"] = _users;
                         returnAction="Dashboard";
                         returnController = "Home";
-
                     }
                     else
                     {
@@ -68,3 +63,4 @@ namespace efinpro.Controllers
         }
     }
 }
+
