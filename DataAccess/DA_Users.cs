@@ -31,6 +31,7 @@ namespace DataAccess
             }
             return listuser;
         }
+
         /// <summary>
         /// Description :Verify User Login  
         /// Name:Sruthi A
@@ -56,6 +57,7 @@ namespace DataAccess
             }
             return _users;
         }
+
         /// <summary>
         /// Description :Insert User into Database 
         /// Name:AjayKumar J
@@ -69,7 +71,7 @@ namespace DataAccess
                     DB_UTILITY.CreateParameter("@ic_FirstName",DbType.String,ParameterDirection.Input,usr.FirstName),
                     DB_UTILITY.CreateParameter("@ic_LastName",DbType.String,ParameterDirection.Input,usr.LastName),
                     DB_UTILITY.CreateParameter("@ic_MailID",DbType.String,ParameterDirection.Input,usr.MailID),
-                    DB_UTILITY.CreateParameter("@ic_Password",DbType.String,ParameterDirection.Input,getRandomAlphaNumericstring()),
+                    DB_UTILITY.CreateParameter("@ic_Password",DbType.String,ParameterDirection.Input,getRandomAlphaNumericstring(10)),
                     DB_UTILITY.CreateParameter("@ic_ContactNumber",DbType.String,ParameterDirection.Input,usr.ContactNumber),
                     DB_UTILITY.CreateParameter("@ic_Role",DbType.Int16,ParameterDirection.Input,"1"),
                 };
@@ -84,27 +86,6 @@ namespace DataAccess
                 throw ex;
             }
             return _user;
-        }
-        public string getRandomAlphaNumericstring()
-        {
-            string PasswordLength = "8";
-            string NewPassword = "";
-            string allowedChars = "";
-            allowedChars += "1,2,3,4,5,6,7,8,9,0";
-            allowedChars += "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,";
-            allowedChars += "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,";
-            char[] sep = { ',' };
-            string[] arr = allowedChars.Split(sep);
-            string IDString = "";
-            string temp = "";
-            Random rand = new Random();
-            for (int i = 0; i < Convert.ToInt32(PasswordLength); i++)
-            {
-                temp = arr[rand.Next(0, arr.Length)];
-                IDString += temp;
-                NewPassword = IDString;
-            }
-            return NewPassword;
-        }
+        }       
     }
 }

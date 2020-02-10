@@ -9,26 +9,26 @@
             @using (Html.BeginForm("NewUser", "User", FormMethod.Post))
             {
                 <div class="control-group">
-                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-sm-2" })
+                    @Html.LabelFor(model => model.FirstName, new { @id="lblfirtsname",@class = "control-label col-sm-2" })
                     <div class="controls">
                         @Html.TextBoxFor(model => model.FirstName, new { @id = "txtfirstname", @class = "required form-control alphabet", @type = "text", @required = "" })
                     </div>
                 </div>
                 <div class="control-group">
-                    @Html.LabelFor(model => model.LastName, new { @class = "control-label col-sm-2" })
+                    @Html.LabelFor(model => model.LastName, new { @id = "lbllastname", @class = "control-label col-sm-2" })
                     <div class="controls">
                         @Html.TextBoxFor(model => model.LastName, new { @id = "txtLastName", @class = "required form-control alphabet", @type = "text", @required = "", @requiredpattern = "text" })
                     </div>
                 </div>
                 <div class="control-group">
-                    @Html.LabelFor(model => model.MailID, new { @class = "control-label col-sm-2" })
+                    @Html.LabelFor(model => model.MailID, new { @id = "lblmailid", @class = "control-label col-sm-2" })
                     <div class="controls">
                         @Html.TextBoxFor(model => model.MailID, new { @id = "txtmail", @class = "form-control", @type = "email", @required = "" })
                         @Html.ValidationMessageFor(model => model.MailID)
                     </div>
                 </div>
                 <div class="control-group">
-                    @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-sm-2" })
+                    @Html.LabelFor(model => model.ContactNumber, new { @id = "lblcontactnumber", @class = "control-label col-sm-2" })
                     <div class="controls">
                         @Html.TextBoxFor(model => model.ContactNumber, new { @id = "txtcontactnumber", @class = "required form-control numeric contactno", @required = "" })
                     </div>
