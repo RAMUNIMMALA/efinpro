@@ -35,7 +35,7 @@ namespace efinpro.Controllers
             try
             {                
                 _users = _daUsers.VerifyUserLogin(_userdetails.MailID, _userdetails.Password);                
-                if(_users!=null && ModelState.Count>0)
+                if(_users!=null)
                 {
                     if(_users.Status)
                     {
