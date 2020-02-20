@@ -69,12 +69,30 @@
         <div class="subnavbar-inner">
             <div class="container">
                 <ul class="mainnav">
-                    <li class="active"><a href="index.html"><i class="icon-home"></i><span>Home</span> </a> </li>
-                    <li><a href="Users.html"><i class="icon-user"></i><span>Users</span> </a> </li>
-                    <li><a href="accounts.html"><i class="icon-book"></i><span>Accounts</span> </a> </li>
-                    <li><a href="payments.html"><i class="icon-money"></i><span>Payments</span> </a></li>
-                    <li><a href="receivables.html"><i class="icon-large icon-list-ol"></i><span>Receivables</span> </a> </li>
-                    <li><a href="reports.html"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+                    <li><a href="~/Home/Dashboard"><i class="icon-home"></i><span>Home</span> </a> </li>
+                    <li class=" dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i>
+                            <span>Users</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/User/Index">Users List</a></li>
+                            <li><a href="~/User/NewUser">Add New User</a></li>
+                        </ul>
+                    </li>
+                    <li class=" dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-book"></i>
+                            <span>Accounts</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Account/Index">Accounts List</a></li>
+                            <li><a href="~/Acoount/NewAccount">Add New Account</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Payment/Index"><i class="icon-money"></i><span>Payments</span> </a></li>
+                    <li><a href="~/Receivable/Index"><i class="icon-large icon-list-ol"></i><span>Receivables</span> </a> </li>
+                    <li><a href="~/Report/Index"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
 
                 </ul>
             </div>
